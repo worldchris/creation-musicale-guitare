@@ -3,65 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Project : Night Dream - Audio Stack & Creativity | Soochrys</title>
+    <title>Project: Night Dream - Audio Stack & Independent Creativity | Soochrys</title>
+    <meta name="description" content="Documentation technique et manifeste créatif du projet Night Dream par Soochrys. Exploration de l'ingénierie sonore simplifiée et de la lutherie indépendante.">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "Night Dream Audio Project",
+      "author": {
+        "@type": "Person",
+        "name": "Soochrys"
+      },
+      "description": "Un projet d'artisanat sonore et de lutherie numérique visant à simplifier la création musicale en home-studio.",
+      "url": "https://worldchris.github.io/creation-musicale-guitare/",
+      "genre": "Guitare Instrumentale / Audio Engineering",
+      "keywords": "Guitare, Home-Studio, MAO, Lutherie, Soochrys, Night Dream, GitHub"
+    }
+    </script>
+
     <style>
         :root {
-            --bg-color: #0d1117;
-            --container-bg: #161b22;
-            --border-color: #30363d;
-            --text-color: #c9d1d9;
-            --link-color: #58a6ff;
-            --accent-color: #bb86fc;
+            --bg: #0d1117;
+            --side: #161b22;
+            --border: #30363d;
+            --text: #c9d1d9;
+            --text-bright: #f0f6fc;
+            --link: #58a6ff;
+            --done: #238636;
         }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; margin: 0; padding: 0; }
-        .container { max-width: 850px; margin: 40px auto; padding: 20px; background-color: var(--container-bg); border: 1px solid var(--border-color); border-radius: 6px; }
-        header { border-bottom: 1px solid var(--border-color); margin-bottom: 30px; padding-bottom: 20px; }
-        h1 { font-size: 2em; color: #f0f6fc; margin: 0; }
-        h2 { font-size: 1.5em; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-top: 40px; color: #f0f6fc; }
-        a { color: var(--link-color); text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; margin: 0; padding: 0; }
+        .wrapper { max-width: 1012px; margin: 0 auto; padding: 40px 20px; display: flex; flex-direction: column; gap: 24px; }
         
-        /* Badges de projet style GitHub */
-        .badge { display: inline-block; padding: 2px 10px; border-radius: 20px; background: #21262d; border: 1px solid var(--border-color); font-size: 0.8em; margin-right: 5px; }
+        /* Style Header GitHub */
+        header { border-bottom: 1px solid var(--border); padding-bottom: 20px; }
+        h1 { font-size: 32px; color: var(--text-bright); margin: 0; display: flex; align-items: center; gap: 10px; }
+        .version-tag { font-size: 12px; border: 1px solid var(--border); padding: 2px 8px; border-radius: 20px; color: #8b949e; vertical-align: middle; }
+        
+        /* Conteneur principal type README */
+        .readme-body { background: var(--side); border: 1px solid var(--border); border-radius: 6px; padding: 32px; }
+        h2 { font-size: 24px; border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-top: 40px; color: var(--text-bright); }
+        p { margin-bottom: 16px; font-size: 16px; text-align: justify; }
 
-        /* Player YouTube intégré propre */
-        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 6px; margin: 30px 0; border: 1px solid var(--border-color); }
+        /* Fix Vidéo YouTube */
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 6px; margin: 24px 0; border: 1px solid var(--border); }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-        /* Bloc d'action style "Releases" */
-        .release-box { background-color: #0d1117; border: 1px solid var(--border-color); padding: 20px; border-radius: 6px; margin: 20px 0; }
-        .btn-download { display: inline-block; background-color: #238636; color: white; padding: 10px 20px; border-radius: 6px; font-weight: bold; margin-top: 10px; }
-        .btn-download:hover { background-color: #2ea043; text-decoration: none; }
+        /* Buttons de conversion style GitHub Primary */
+        .action-buttons { display: flex; flex-direction: column; gap: 12px; margin: 24px 0; }
+        .btn { display: inline-block; padding: 8px 16px; font-size: 14px; font-weight: 500; border-radius: 6px; text-decoration: none; cursor: pointer; border: 1px solid rgba(240,246,252,0.1); }
+        .btn-primary { background-color: var(--done); color: #fff; }
+        .btn-primary:hover { background-color: #2ea043; }
+        .btn-outline { background-color: #21262d; color: var(--link); border-color: var(--border); }
+        .btn-outline:hover { background-color: #30363d; border-color: #8b949e; }
 
-        .resource-list { list-style: none; padding: 0; }
-        .resource-list li { padding: 8px 0; border-bottom: 1px solid var(--border-color); }
-        .resource-list li:last-child { border-bottom: none; }
+        code { background-color: rgba(110,118,129,0.2); padding: 0.2em 0.4em; border-radius: 6px; font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace; font-size: 85%; }
         
-        footer { text-align: center; margin-top: 50px; font-size: 0.8em; color: #8b949e; border-top: 1px solid var(--border-color); padding-top: 20px; }
+        footer { border-top: 1px solid var(--border); padding-top: 40px; margin-top: 60px; font-size: 12px; color: #8b949e; text-align: center; }
+        footer a { color: #8b949e; text-decoration: none; margin: 0 10px; }
     </style>
 </head>
 <body>
 
-<div class="container">
+<div class="wrapper">
     <header>
-        <div style="margin-bottom: 10px;">
-            <span class="badge">Open Source Project</span>
-            <span class="badge">Music & Arts</span>
-            <span class="badge">v1.0.2</span>
-        </div>
-        <h1>Night Dream : Audio Creation Stack</h1>
-        <p>Documentation et ressources pour la création musicale indépendante à la guitare.</p>
+        <h1>Night Dream <span class="version-tag">v1.0.4-stable</span></h1>
+        <p style="color: #8b949e; margin-top: 8px;">Dépôt de ressources pour la création musicale indépendante et l'artisanat sonore.</p>
     </header>
 
-    <main>
-        <section>
-            <h2>Description du Projet</h2>
-            <p>Ce dépôt GitHub centralise les recherches et les méthodes d'artisanat sonore développées par <strong>Soochrys</strong>. Le projet <em>Night Dream</em> sert de base d'étude pour démontrer qu'une production instrumentale de haute qualité est accessible avec une approche pragmatique et épurée.</p>
+    <div class="readme-body">
+        <section id="introduction">
+            <h2>📖 Project Scope</h2>
+            <p>Ce projet centralise l'approche créative de <strong>Soochrys</strong>. Contrairement aux standards de l'industrie, le titre <code>Night Dream</code> démontre qu'une œuvre peut être produite avec une structure technique légère et une intention artistique brute. Ce dépôt sert de point d'ancrage pour les musiciens cherchant à s'affranchir des contraintes budgétaires.</p>
         </section>
 
-        <section>
-            <h2>Démonstration Vidéo</h2>
-            <p>Session instrumentale enregistrée avec le moteur de son Zoom G2X Four et une chaîne d'acquisition optimisée.</p>
+        <section id="demo">
+            <h2>🎬 Audio Demonstration</h2>
+            <p>Visualisation de la session instrumentale. Note : L'enregistrement a été réalisé via une chaîne d'acquisition simplifiée (Interface UMC22 & Moteur de son Zoom G2X Four).</p>
             <div class="video-container">
                 <iframe 
                     src="https://www.youtube.com/embed/5rPnIrg6JqQ?rel=0&modestbranding=1" 
@@ -72,27 +90,41 @@
             </div>
         </section>
 
-        <section class="release-box">
-            <h3>📂 Release : Manifeste de Créativité (PDF)</h3>
-            <p>Consultez le guide complet incluant la philosophie de création et les protocoles de home-studio.</p>
-            <a href="https://github.com/worldchris/creation-musicale-guitare/raw/main/liberez-votre-musique.pdf" class="btn-download">Télécharger le PDF</a>
+        <section id="resources">
+            <h2>🛠️ Technical Resources & Documentation</h2>
+            <p>Pour approfondir la mécanique de l'enregistrement et libérer votre potentiel créatif, accédez aux modules suivants :</p>
+            
+            <div class="action-buttons">
+                <a href="https://github.com/worldchris/creation-musicale-guitare/raw/main/liberez-votre-musique.pdf" class="btn btn-primary">⬇️ Download Manifeste (PDF Version cliquable)</a>
+                <a href="https://tv.guitaretoday.com/conseils-gratuits/" class="btn btn-outline" target="_blank" rel="noopener">⚡ Test Gratuit : Évaluer votre jeu</a>
+                <a href="https://store.guitaretoday.com/downloads/le-home-studio-du-guitariste-guide-ultime-pour-senregistrer-et-sonner-pro-sans-se-ruiner/" class="btn btn-outline" target="_blank" rel="noopener">📙 Ebook : Méthode Home-Studio Pro</a>
+            </div>
         </section>
 
-        <section>
-            <h2>Écosystème & Ressources</h2>
-            <ul class="resource-list">
-                <li>🌐 <strong>Site Officiel :</strong> <a href="https://guitare-instrumentale.cfchits.com/">guitare-instrumentale.cfchits.com</a></li>
-                <li>🛠️ <strong>Workshop :</strong> <a href="https://guitarfabrik.guitaretoday.com/">Conception de Guitare Custom</a></li>
-                <li>🎯 <strong>Training :</strong> <a href="https://tv.guitaretoday.com/conseils-gratuits/">Test de niveau gratuit</a></li>
-                <li>📖 <strong>Ebook :</strong> <a href="https://store.guitaretoday.com/downloads/le-home-studio-du-guitariste-guide-ultime-pour-senregistrer-et-sonner-pro-sans-se-ruiner/">Méthode Home-Studio</a></li>
-                <li>🎧 <strong>Streaming :</strong> <a href="https://music.soochrys.com/podcasts/soochrys-le-podcast-musique-relaxante-et-meditation/">Podcast Méditation & Relaxation</a></li>
+        <section id="ecosystem">
+            <h2>🌐 Ecosystem Integration</h2>
+            <p>L'indépendance musicale repose sur un maillage sémantique et physique fort. Chaque canal ci-dessous est un pilier de cet écosystème :</p>
+            <ul>
+                <li><strong>Lutherie Custom :</strong> <a href="https://guitarfabrik.guitaretoday.com/" target="_blank">Guitar Fabrik</a> - Conception d'outils sur mesure.</li>
+                <li><strong>Podcast :</strong> <a href="https://music.soochrys.com/podcasts/soochrys-le-podcast-musique-relaxante-et-meditation/" target="_blank">Soochrys Méditation</a> - Sessions immersives.</li>
+                <li><strong>Merchandising :</strong> <a href="https://boutique.soochrys.com" target="_blank">Boutique Officielle</a> - Écusson et ancrage physique.</li>
+                <li><strong>Streaming :</strong> <a href="https://open.spotify.com/intl-fr/artist/1y7KqaXtzLCijUVauf9p5Z" target="_blank">Écouter sur Spotify</a>.</li>
             </ul>
         </section>
-    </main>
+
+        <section id="legal">
+            <p style="font-size: 13px; color: #8b949e; border-top: 1px solid var(--border); padding-top: 20px;">
+                Ce dépôt GitHub Pages est une branche miroir du portail officiel : <a href="https://guitare-instrumentale.cfchits.com/">guitare-instrumentale.cfchits.com</a>.
+            </p>
+        </section>
+    </div>
 
     <footer>
-        <p>© 2026 Soochrys - Dépôt maintenu par worldchris</p>
-        <p><a href="https://cfchits.com/conditions-dutilisation/politique-de-confidentialite/">Privacy Policy</a> | <a href="https://github.com/worldchris/creation-musicale-guitare">Source Code</a></p>
+        <div style="margin-bottom: 10px;">
+            <a href="https://github.com/worldchris/creation-musicale-guitare">GitHub Repository</a> • 
+            <a href="https://cfchits.com/conditions-dutilisation/politique-de-confidentialite/" target="_blank">Privacy Policy</a>
+        </div>
+        © 2026 Soochrys - Creative Guitar Project
     </footer>
 </div>
 
